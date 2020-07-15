@@ -14,7 +14,7 @@
     </parent>
     <groupId>com.lxian</groupId>
     <artifactId>pet-clinic</artifactId>
-    <version>1.0-SNOPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
     <name>pet-clinic</name>
     <description>Demo project for Spring Boot</description>
 
@@ -22,12 +22,6 @@
         <java.version>11</java.version>
     </properties>
 
-    <dependencies>
-
-
-
-
-    </dependencies>
 
     <build>
         <plugins>
