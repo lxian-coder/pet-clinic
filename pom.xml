@@ -14,7 +14,7 @@
     </parent>
     <groupId>com.lxian</groupId>
     <artifactId>pet-clinic</artifactId>
-    <version>1.1</version>
+    <version>1.2-SNAPSHOT</version>
     <name>pet-clinic</name>
     <description>Demo project for Spring Boot</description>
 
@@ -45,6 +45,6 @@
 
  <scm>
      <developerConnection>scm:git:https://github.com/lxian-coder/pet-clinic.git</developerConnection>
-   <tag>pet-clinic-1.1</tag>
+   <tag>pet-clinic-1.0</tag>
   </scm>
 </project>
