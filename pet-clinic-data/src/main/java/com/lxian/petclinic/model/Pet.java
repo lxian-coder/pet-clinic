@@ -2,10 +2,7 @@ package com.lxian.petclinic.model;
 
 import java.time.LocalDate;
 
-/**
- * @Author: Darcy Xian
- * @Date: 2020/7/13  20:26
- */
+
 public class Pet {
 
     private PetType petType;
