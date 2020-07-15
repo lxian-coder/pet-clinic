@@ -47,8 +47,9 @@
         </plugins>
     </build>
 
+    <scm>
+        <developerConnection>scm:git:https://github.com/lxian-coder/pet-clinic.git</developerConnection>
+    </scm>
 
-  <scm>
-    <tag>pet-clinic-1.0</tag>
-  </scm>
+
 </project>
