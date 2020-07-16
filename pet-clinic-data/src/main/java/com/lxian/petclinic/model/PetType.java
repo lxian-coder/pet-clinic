@@ -1,5 +1,5 @@
 package com.lxian.petclinic.model;
 
 
-public class PetType extends BaseEntity{
+public class PetType extends BaseEntity {
 }
