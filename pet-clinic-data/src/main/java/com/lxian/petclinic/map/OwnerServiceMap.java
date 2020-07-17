@@ -1,7 +1,6 @@
 package com.lxian.petclinic.map;
 
 import com.lxian.petclinic.model.Owner;
-import com.lxian.petclinic.model.Vet;
 import com.lxian.petclinic.services.CrudService;
 
 import java.util.Set;
@@ -14,7 +13,7 @@ import java.util.Set;
 public class OwnerServiceMap extends AbstractService<Owner,Long> implements CrudService<Owner,Long> {
 
     @Override
-    public Set<Vet> findAll() {
+    public Set<Owner> findAll() {
         return super.findAll();
     }
 
