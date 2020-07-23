@@ -1,7 +1,7 @@
 package com.lxian.petclinic.map;
 
 import com.lxian.petclinic.model.Owner;
-import com.lxian.petclinic.services.CrudService;
+import com.lxian.petclinic.services.OwnerService;
 
 import java.util.Set;
 
@@ -10,7 +10,7 @@ import java.util.Set;
  * Author : Darcy Xian
  * Create : 2020-07-16  18:42
  */
-public class OwnerServiceMap extends AbstractService<Owner,Long> implements CrudService<Owner,Long> {
+public class OwnerServiceMap extends AbstractService<Owner,Long> implements OwnerService {
 
     @Override
     public Set<Owner> findAll() {
@@ -37,5 +37,11 @@ public class OwnerServiceMap extends AbstractService<Owner,Long> implements Crud
         super.deleteByID(id);
 
     }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
+    }
+
 
 }

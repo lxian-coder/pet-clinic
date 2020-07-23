@@ -1,7 +1,7 @@
 package com.lxian.petclinic.map;
 
 import com.lxian.petclinic.model.Vet;
-import com.lxian.petclinic.services.CrudService;
+import com.lxian.petclinic.services.VetService;
 
 import java.util.Set;
 
@@ -10,7 +10,7 @@ import java.util.Set;
  * Author : Darcy Xian
  * Create : 2020-07-16  23:53
  */
-public class VetServiceMap extends AbstractService<Vet, Long> implements CrudService<Vet,Long> {
+public class VetServiceMap extends AbstractService<Vet, Long> implements VetService {
 
     @Override
     public Set<Vet> findAll() {
