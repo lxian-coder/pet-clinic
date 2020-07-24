@@ -1,9 +1,8 @@
 package com.lxian.petclinic.map;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import com.lxian.petclinic.model.BaseEntity;
+
+import java.util.*;
 
 /**
  * Program : pet-clinic
@@ -11,8 +10,8 @@ import java.util.Set;
  * Create : 2020-07-16  13:03
  */
 
-public abstract class AbstractService<T,ID> {
-    protected Map<ID,T> map = new HashMap<>();
+public abstract class AbstractService<T extends BaseEntity,ID extends Long> {
+    protected Map<Long,T> map = new HashMap<>();
 
     Set<T> findAll(){
         return new HashSet<>(map.values());   // map.values return collection of values
@@ -22,8 +21,12 @@ public abstract class AbstractService<T,ID> {
         return map.get(id);
     }
 
-    T save(ID id, T object){
-        map.put(id,object);
+    T save( T object){
+        if(object != null)
+            if(object.getId() == null) {
+                object.setId(getNextId());
+                map.put(getNextId(), object);
+            }
         return object;
     }
 
@@ -33,6 +36,17 @@ public abstract class AbstractService<T,ID> {
 
     void delete(T object){
         map.entrySet().removeIf(entry -> entry.getValue().equals(object) );
+    }
+
+    public Long getNextId(){
+        Long nextId = null;
+        try{
+            nextId = Collections.max(map.keySet()) + 1L; }
+        catch(NoSuchElementException e){
+            nextId = 1L;
+        }
+
+        return nextId ;
     }
 
 
