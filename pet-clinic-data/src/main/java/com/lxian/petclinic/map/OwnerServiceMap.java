@@ -2,6 +2,7 @@ package com.lxian.petclinic.map;
 
 import com.lxian.petclinic.model.Owner;
 import com.lxian.petclinic.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
@@ -10,6 +11,7 @@ import java.util.Set;
  * Author : Darcy Xian
  * Create : 2020-07-16  18:42
  */
+@Service
 public class OwnerServiceMap extends AbstractService<Owner,Long> implements OwnerService {
 
     @Override

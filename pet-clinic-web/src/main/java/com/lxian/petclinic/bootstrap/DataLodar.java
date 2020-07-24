@@ -1,7 +1,5 @@
 package com.lxian.petclinic.bootstrap;
 
-import com.lxian.petclinic.map.OwnerServiceMap;
-import com.lxian.petclinic.map.VetServiceMap;
 import com.lxian.petclinic.model.Owner;
 import com.lxian.petclinic.model.Vet;
 import com.lxian.petclinic.services.OwnerService;
@@ -15,12 +13,13 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class DataLodar implements CommandLineRunner {
+
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public DataLodar() {
-        ownerService = new OwnerServiceMap();
-        vetService = new VetServiceMap();
+    public DataLodar(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override
@@ -34,9 +33,9 @@ public class DataLodar implements CommandLineRunner {
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
-        owner1.setId(2L);
-        owner1.setFirstName("Fiona");
-        owner1.setLastName("Glename");
+        owner2.setId(2L);
+        owner2.setFirstName("Fiona");
+        owner2.setLastName("Glename");
 
         ownerService.save(owner2);
 
