@@ -32,7 +32,6 @@ public class VetServiceMap extends AbstractService<Vet, Long> implements VetServ
     @Override
     public void delete(Vet object) {
         super.delete(object);
-
     }
 
     @Override
