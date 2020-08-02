@@ -8,9 +8,9 @@ import java.util.Set;
  * Create : 2020-07-16  12:25
  */
 
-public interface CrudService <T,ID> {
+public abstract interface CrudService <T,ID> {
 
-    abstract Set<T> findAll();
+     Set<T> findAll();
     T findByID(ID id);
     T save(T object);
     void delete(T object);

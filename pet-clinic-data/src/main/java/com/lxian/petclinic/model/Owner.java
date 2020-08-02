@@ -4,17 +4,17 @@ import java.util.Set;
 
 public class Owner extends Person {
 
-    private String Address;
+    private String address;
     private String city;
     private String telehpone;
     private Set<Pet> pets;
 
     public String getAddress() {
-        return Address;
+        return address;
     }
 
     public void setAddress(String address) {
-        Address = address;
+        address = address;
     }
 
     public String getCity() {
