@@ -2,6 +2,7 @@ package com.lxian.petclinic.map;
 
 import com.lxian.petclinic.model.PetType;
 import com.lxian.petclinic.services.PetTypeService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
@@ -9,7 +10,7 @@ import java.util.Set;
  * pet-clinic
  * Author : Darcy Xian    Create : 2020-08-02  19:04
  */
-
+@Service
 public class PetTypeServiceMap extends AbstractService<PetType,Long> implements PetTypeService{
 
     @Override

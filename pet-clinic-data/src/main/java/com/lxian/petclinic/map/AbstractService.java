@@ -10,7 +10,7 @@ import java.util.*;
  * Create : 2020-07-16  13:03
  */
 
-public abstract class AbstractService<T extends BaseEntity,ID extends Long> {
+public abstract class AbstractService<T extends BaseEntity,ID extends Long>  {
     protected Map<Long,T> map = new HashMap<>();
 
     Set<T> findAll(){
