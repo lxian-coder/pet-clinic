@@ -1,6 +1,7 @@
 package com.lxian.petclinic.bootstrap;
 
 import com.lxian.petclinic.model.Owner;
+import com.lxian.petclinic.model.Pet;
 import com.lxian.petclinic.model.PetType;
 import com.lxian.petclinic.model.Vet;
 import com.lxian.petclinic.services.OwnerService;
@@ -8,6 +9,8 @@ import com.lxian.petclinic.services.PetTypeService;
 import com.lxian.petclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 /**
  * pet-clinic
@@ -43,12 +46,33 @@ public class DataLodar implements CommandLineRunner {
         Owner owner1 = new Owner();
         owner1.setFirstName("Micheal");
         owner1.setLastName("Weston");
+        owner1.setAddress("2323 seaFarer Way");
+        owner1.setCity("Melbourne");
+        owner1.setTelehpone("044444444");
+
+        Pet micPet = new Pet();
+        micPet.setOwner(owner1);
+        micPet.setPetType(saveCatPetType);
+        micPet.setBirthDate(LocalDate.now());
+        micPet.setName("Rusco");
+        owner1.setPets(micPet);
 
         ownerService.save(owner1);
+
 
         Owner owner2 = new Owner();
         owner2.setFirstName("Fiona");
         owner2.setLastName("Glename");
+        owner2.setAddress("2323 seaFarer Way");
+        owner2.setCity("Melbourne");
+        owner2.setTelehpone("044444444");
+
+        Pet fionaCat = new Pet();
+        fionaCat.setName("Babecue");
+        fionaCat.setPetType(saveCatPetType);
+        fionaCat.setBirthDate(LocalDate.now());
+        fionaCat.setOwner(owner2);
+        owner2.setPets(fionaCat);
 
         ownerService.save(owner2);
 

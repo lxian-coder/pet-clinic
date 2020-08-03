@@ -49,5 +49,4 @@ public abstract class AbstractService<T extends BaseEntity,ID extends Long>  {
         return nextId ;
     }
 
-
 }

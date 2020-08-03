@@ -1,20 +1,22 @@
 package com.lxian.petclinic.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Owner extends Person {
 
+
     private String address;
     private String city;
     private String telehpone;
-    private Set<Pet> pets;
+    private Set<Pet> pets = new HashSet<>();
 
     public String getAddress() {
         return address;
     }
 
     public void setAddress(String address) {
-        address = address;
+        this.address = address;
     }
 
     public String getCity() {
@@ -37,7 +39,7 @@ public class Owner extends Person {
         return pets;
     }
 
-    public void setPets(Set<Pet> pets) {
-        this.pets = pets;
+    public void setPets(Pet pet) {
+        this.pets.add(pet);
     }
 }
