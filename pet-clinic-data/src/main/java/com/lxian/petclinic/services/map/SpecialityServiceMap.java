@@ -1,4 +1,4 @@
-package com.lxian.petclinic.map;
+package com.lxian.petclinic.services.map;
 
 import com.lxian.petclinic.model.Speciality;
 import com.lxian.petclinic.services.SpecialityService;

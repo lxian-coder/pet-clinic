@@ -1,4 +1,4 @@
-package com.lxian.petclinic.map;
+package com.lxian.petclinic.services.map;
 
 import com.lxian.petclinic.model.Owner;
 import com.lxian.petclinic.model.Pet;
