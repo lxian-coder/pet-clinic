@@ -32,7 +32,6 @@ public class PetServicesMap extends AbstractService<Pet,Long> implements PetServ
     @Override
     public void delete(Pet object) {
           super.delete(object);
-
     }
 
     @Override

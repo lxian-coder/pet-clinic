@@ -1,11 +1,9 @@
 package com.lxian.petclinic.bootstrap;
 
-import com.lxian.petclinic.model.Owner;
-import com.lxian.petclinic.model.Pet;
-import com.lxian.petclinic.model.PetType;
-import com.lxian.petclinic.model.Vet;
+import com.lxian.petclinic.model.*;
 import com.lxian.petclinic.services.OwnerService;
 import com.lxian.petclinic.services.PetTypeService;
+import com.lxian.petclinic.services.SpecialityService;
 import com.lxian.petclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -22,15 +20,35 @@ public class DataLodar implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
     private final PetTypeService petTypeService;
+    private final SpecialityService specialityService;
 
-    public DataLodar(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
+    public DataLodar(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
+        this.specialityService = specialityService;
     }
 
     @Override
     public void run(String... args) throws Exception {
+       // int count = petTypeService.findAll().size();
+      // if(count == 0){
+           loadData();
+       //}
+    }
+
+    private void loadData() {
+        Speciality speciality = new Speciality();
+        speciality.setDescription("radiology");
+        specialityService.save(speciality);
+
+        Speciality speciality1 = new Speciality();
+        speciality.setDescription("surgery");
+        specialityService.save(speciality1);
+
+        Speciality speciality2 = new Speciality();
+        speciality2.setDescription("dentenist");
+        specialityService.save(speciality2);
 
         PetType dog = new PetType();
         dog.setName("dog");
@@ -81,16 +99,17 @@ public class DataLodar implements CommandLineRunner {
         Vet vet1 = new Vet();
         vet1.setFirstName("Sam");
         vet1.setLastName("Axe");
+        vet1.getSpecialities().add(speciality);
 
         vetService.save(vet1);
 
         Vet vet2 = new Vet();
         vet2.setFirstName("Jessie");
         vet2.setLastName("Porter");
-
+        vet2.getSpecialities().add(speciality2);
+        vet2.getSpecialities().add(speciality1);
         vetService.save(vet2);
 
         System.out.println("Loaded Vets........");
-
     }
 }
