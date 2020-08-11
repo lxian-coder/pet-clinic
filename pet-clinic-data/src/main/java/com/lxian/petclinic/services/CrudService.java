@@ -1,7 +1,5 @@
 package com.lxian.petclinic.services;
 
-import java.util.Set;
-
 /**
  * Program : pet-clinic
  * Author : Darcy Xian
@@ -10,7 +8,7 @@ import java.util.Set;
 
 public interface CrudService <T,ID> {
 
-    Set<T> findAll();
+    Iterable<T> findAll();
     T findByID(ID id);
     T save(T object);
     void delete(T object);

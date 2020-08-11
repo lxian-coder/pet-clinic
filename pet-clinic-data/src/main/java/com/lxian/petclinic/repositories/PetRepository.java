@@ -1,4 +1,4 @@
-package com.lxian.petclinic.model.repositories;
+package com.lxian.petclinic.repositories;
 
 import com.lxian.petclinic.model.Pet;
 import org.springframework.data.repository.CrudRepository;
