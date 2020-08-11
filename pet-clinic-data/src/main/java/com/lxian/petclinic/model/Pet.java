@@ -1,13 +1,23 @@
 package com.lxian.petclinic.model;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
-
+@Entity
+@Table(name = "pet")
 public class Pet extends BaseEntity {
 
+    @Column(name = "type")
     private PetType petType;
+
+    @Column(name = "name")
     private String name;
+
+    @ManyToOne
+    @JoinColumn(name = "owner_id")
     private Owner owner;
+
+    @Column(name = "birth_date")
     private LocalDate birthDate;
 
     public String getName() {
