@@ -8,7 +8,7 @@ import java.time.LocalDate;
  * Author : Darcy Xian    Create : 2020-07-30  13:38
  */
 @Entity
-@Table(name = "vists")
+@Table(name = "visits")
 public class Visit extends BaseEntity{
 
     @Column(name = "date")

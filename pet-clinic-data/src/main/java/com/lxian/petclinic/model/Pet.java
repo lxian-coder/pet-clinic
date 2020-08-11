@@ -2,13 +2,14 @@ package com.lxian.petclinic.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "pet")
 public class Pet extends BaseEntity {
-
-    @Column(name = "type")
+    @ManyToOne
+    @JoinColumn(name = "type_id")
     private PetType petType;
 
     @Column(name = "name")
@@ -21,8 +22,8 @@ public class Pet extends BaseEntity {
     @Column(name = "birth_date")
     private LocalDate birthDate;
 
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "pet_id")
-    private Set<Visit> visits ;
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "pet")
+    private Set<Visit> visits = new HashSet<>();
 
     public Set<Visit> getVisits() {
         return visits;

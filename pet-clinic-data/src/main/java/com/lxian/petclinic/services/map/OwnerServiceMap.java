@@ -15,6 +15,7 @@ import java.util.Set;
  * Create : 2020-07-16  18:42
  */
 @Service
+//@Profile("asa")
 public class OwnerServiceMap extends AbstractService<Owner,Long> implements OwnerService {
 
     private PetService petService;
