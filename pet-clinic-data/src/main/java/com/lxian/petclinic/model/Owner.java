@@ -1,5 +1,7 @@
 package com.lxian.petclinic.model;
 
+
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
