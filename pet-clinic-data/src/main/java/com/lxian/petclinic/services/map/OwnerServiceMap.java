@@ -5,7 +5,10 @@ import com.lxian.petclinic.model.Pet;
 import com.lxian.petclinic.services.OwnerService;
 import com.lxian.petclinic.services.PetService;
 import com.lxian.petclinic.services.PetTypeService;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
+import org.w3c.dom.ls.LSOutput;
 
 import java.util.Set;
 
@@ -15,16 +18,18 @@ import java.util.Set;
  * Create : 2020-07-16  18:42
  */
 @Service
-//@Profile("asa")
+@Profile({"default","map"})
 public class OwnerServiceMap extends AbstractService<Owner,Long> implements OwnerService {
 
     private PetService petService;
     private PetTypeService petTypeService;
 
+
     public OwnerServiceMap(PetService petService, PetTypeService petTypeService) {
         this.petService = petService;
         this.petTypeService = petTypeService;
     }
+
 
     @Override
     public Set<Owner> findAll() {

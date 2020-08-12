@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
-@Profile("springDataJpa")
+@Profile("springdatajpa")
 public class OwnerJpaService implements OwnerService {
     private final OwnerRepository ownerRepository;
 
@@ -34,6 +34,7 @@ public class OwnerJpaService implements OwnerService {
 
     @Override
     public Owner save(Owner object) {
+
         return ownerRepository.save(object);
     }
 

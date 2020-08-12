@@ -2,6 +2,7 @@ package com.lxian.petclinic.services.map;
 
 import com.lxian.petclinic.model.Speciality;
 import com.lxian.petclinic.services.SpecialityService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -11,6 +12,7 @@ import java.util.Set;
  * Author : Darcy Xian    Create : 2020-08-03  14:41
  */
 @Service
+@Profile({"default","map"})
 public class SpecialityServiceMap extends AbstractService<Speciality,Long> implements SpecialityService {
     @Override
     public Set<Speciality> findAll() {

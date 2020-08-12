@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
  * Darcy Xian  11/8/20  8:34 pm      pet-clinic
  */
 @Service
-@Profile("springdatejpa")
+@Profile("springdatajpa")
 public class PetJpaService implements PetService {
 
     private final PetRepository petRepository;

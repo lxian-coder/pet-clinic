@@ -57,9 +57,9 @@ public class DataLodar implements CommandLineRunner {
         PetType cat = new PetType();
         cat.setName("cat");
         PetType saveCatPetType = petTypeService.save(cat);
-
+        
         System.out.println("Loaded PetType  dog cat........");
-
+        
 
         Owner owner1 = new Owner();
         owner1.setFirstName("Micheal");
@@ -73,7 +73,7 @@ public class DataLodar implements CommandLineRunner {
         micPet.setPetType(saveCatPetType);
         micPet.setBirthDate(LocalDate.now());
         micPet.setName("Rusco");
-        owner1.setPets(micPet);
+        owner1.getPets().add(micPet);
 
         ownerService.save(owner1);
 
@@ -90,7 +90,7 @@ public class DataLodar implements CommandLineRunner {
         fionaCat.setPetType(saveCatPetType);
         fionaCat.setBirthDate(LocalDate.now());
         fionaCat.setOwner(owner2);
-        owner2.setPets(fionaCat);
+        owner2.getPets().add(fionaCat);
 
         ownerService.save(owner2);
 

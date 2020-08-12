@@ -2,13 +2,29 @@ package com.lxian.petclinic.model;
 
 
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
+@Setter
+@Getter
 
+@NoArgsConstructor
 @Entity
+
 @Table(name = "Owners")
 public class Owner extends Person {
+
+    @Builder
+    public Owner(Long id, String firstName, String lastName,String address,String city,String telehpone) {
+
+        super(id, firstName, lastName);
+        this.address = address;
+        this.city = city;
+        this.telehpone = telehpone;
+    }
+
 
     @Column(name = "address")
     private String address;
@@ -22,35 +38,4 @@ public class Owner extends Person {
     @OneToMany( cascade = CascadeType.ALL, mappedBy = "owner")
     private Set<Pet> pets = new HashSet<>();
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getTelehpone() {
-        return telehpone;
-    }
-
-    public void setTelehpone(String telehpone) {
-        this.telehpone = telehpone;
-    }
-
-    public Set<Pet> getPets() {
-        return pets;
-    }
-
-    public void setPets(Pet pet) {
-        this.pets.add(pet);
-    }
 }

@@ -20,6 +20,7 @@
 
 
     <dependencies>
+
         <dependency>
             <artifactId>pet-clinic-data</artifactId>
             <groupId>com.lxian</groupId>
