@@ -5,6 +5,7 @@ import com.lxian.petclinic.services.OwnerService;
 import com.lxian.petclinic.services.PetTypeService;
 import com.lxian.petclinic.services.SpecialityService;
 import com.lxian.petclinic.services.VetService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +15,7 @@ import java.time.LocalDate;
  * pet-clinic
  * Author : Darcy Xian    Create : 2020-07-23  22:07
  */
+@Slf4j
 @Component
 public class DataLodar implements CommandLineRunner {
 
@@ -31,10 +33,9 @@ public class DataLodar implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-       // int count = petTypeService.findAll().size();
-      // if(count == 0){
+        log.debug("I am in datalodar" );
            loadData();
-       //}
+
     }
 
     private void loadData() {
