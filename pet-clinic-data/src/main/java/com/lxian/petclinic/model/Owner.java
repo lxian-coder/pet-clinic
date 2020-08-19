@@ -9,10 +9,8 @@ import java.util.HashSet;
 import java.util.Set;
 @Setter
 @Getter
-
 @NoArgsConstructor
 @Entity
-
 @Table(name = "Owners")
 public class Owner extends Person {
 

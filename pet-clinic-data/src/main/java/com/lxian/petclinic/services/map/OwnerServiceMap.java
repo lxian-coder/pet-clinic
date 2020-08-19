@@ -5,10 +5,8 @@ import com.lxian.petclinic.model.Pet;
 import com.lxian.petclinic.services.OwnerService;
 import com.lxian.petclinic.services.PetService;
 import com.lxian.petclinic.services.PetTypeService;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
-import org.w3c.dom.ls.LSOutput;
 
 import java.util.Set;
 
@@ -78,8 +76,53 @@ public class OwnerServiceMap extends AbstractService<Owner,Long> implements Owne
 
     @Override
     public Owner findByLastName(String lastName) {
-        return null;
+
+        return this.findAll()
+                .stream()
+                .filter(Owner -> Owner.getLastName().equalsIgnoreCase(lastName))
+                .findFirst()
+                .orElse(null);
+
     }
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -18,15 +18,20 @@ public abstract class AbstractService<T extends BaseEntity,ID extends Long>  {
     }
 
     T findByID(ID id){
-        return map.get(id);
+        return (T) map.get(id);
     }
 
-    T save( T object){
-        if(object != null)
-            if(object.getId() == null) {
+    T save( T object) {
+        if (object != null) {
+            if (object.getId() == null) {
                 object.setId(getNextId());
-                map.put(getNextId(), object);
+            }else {
+
             }
+            map.put(object.getId(), object);
+        } else {
+            throw new RuntimeException("Object can not be NULL!");
+        }
         return object;
     }
 
