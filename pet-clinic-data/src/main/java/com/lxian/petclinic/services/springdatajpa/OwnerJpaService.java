@@ -6,6 +6,8 @@ import com.lxian.petclinic.services.OwnerService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @Profile("springdatajpa")
 public class OwnerJpaService implements OwnerService {
@@ -46,5 +48,10 @@ public class OwnerJpaService implements OwnerService {
     @Override
     public void deleteByID(Long aLong) { ownerRepository.deleteById(aLong);
 
+    }
+
+    @Override
+    public List<Owner> findAllByLastNameLike(String lastName) {
+        return ownerRepository.findAllByLastNameLike(lastName);
     }
 }

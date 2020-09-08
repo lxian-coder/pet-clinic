@@ -2,6 +2,8 @@ package com.lxian.petclinic.services;
 
 import com.lxian.petclinic.model.Owner;
 
+import java.util.List;
+
 /**
  * Author : Darcy Xian
  * Program : pet-clinic
@@ -10,5 +12,6 @@ import com.lxian.petclinic.model.Owner;
 public interface OwnerService extends CrudService<Owner, Long> {
 
   Owner findByLastName(String lastName);
+  List<Owner> findAllByLastNameLike(String lastName);
 
 }
