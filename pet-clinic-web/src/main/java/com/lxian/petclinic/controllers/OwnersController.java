@@ -1,9 +1,13 @@
 package com.lxian.petclinic.controllers;
 
+import com.lxian.petclinic.model.Owner;
 import com.lxian.petclinic.services.OwnerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * pet-clinic
@@ -13,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class OwnersController {
 
-    private OwnerService ownerService;
+    private final OwnerService ownerService;
 
     public OwnersController(OwnerService ownerService) {
         this.ownerService = ownerService;
@@ -29,4 +33,14 @@ public class OwnersController {
     public String findOwners(){
         return "notImplement";
     }
+
+    @GetMapping("/{ownerId}")
+    public ModelAndView showOwner(@PathVariable("ownerId") Long ownerId){
+        ModelAndView mav = new ModelAndView("owners/ownerDetails");
+        Owner owner = ownerService.findByID(ownerId);
+        mav.addObject(owner);
+        return mav;
+
+    }
+
 }
