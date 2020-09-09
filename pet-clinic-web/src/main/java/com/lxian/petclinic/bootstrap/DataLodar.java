@@ -67,7 +67,7 @@ public class DataLodar implements CommandLineRunner {
         owner1.setLastName("Weston");
         owner1.setAddress("2323 seaFarer Way");
         owner1.setCity("Melbourne");
-        owner1.setTelehpone("044444444");
+        owner1.setTelephone("044444444");
 
         Pet micPet = new Pet();
         micPet.setOwner(owner1);
@@ -84,7 +84,7 @@ public class DataLodar implements CommandLineRunner {
         owner2.setLastName("Glename");
         owner2.setAddress("2323 seaFarer Way");
         owner2.setCity("Melbourne");
-        owner2.setTelehpone("044444444");
+        owner2.setTelephone("044444444");
 
         Pet fionaCat = new Pet();
         fionaCat.setName("Babecue");
