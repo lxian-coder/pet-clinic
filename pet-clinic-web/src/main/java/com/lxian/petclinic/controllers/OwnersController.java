@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 import java.util.List;
-import java.util.Map;
+
 
 /**
  * pet-clinic
@@ -101,14 +101,6 @@ public class OwnersController {
             return "redirect:/owners/" + savedOwner.getId();
         }
     }
-
-
-
-
-
-
-
-
 }
 
 
