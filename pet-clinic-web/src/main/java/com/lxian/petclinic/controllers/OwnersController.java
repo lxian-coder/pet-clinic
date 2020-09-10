@@ -100,6 +100,12 @@ public class OwnersController {
             Owner savedOwner = ownerService.save(owner);
             return "redirect:/owners/" + savedOwner.getId();
         }
+
+
+
+
+
+
     }
 }
 

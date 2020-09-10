@@ -10,10 +10,22 @@ import java.util.Set;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+
 @Entity
 @Table(name = "pet")
 public class Pet extends BaseEntity {
+    @Builder
+    public Pet(Long id, PetType petType, String name, Owner owner, LocalDate birthDate, Set<Visit> visits) {
+        super(id);
+        this.petType = petType;
+        this.name = name;
+        this.owner = owner;
+        this.birthDate = birthDate;
+        if(visits != null) {
+            this.visits = visits;
+        }
+    }
+
     @ManyToOne
     @JoinColumn(name = "type_id")
     private PetType petType;
