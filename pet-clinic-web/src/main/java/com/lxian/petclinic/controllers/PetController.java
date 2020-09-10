@@ -53,6 +53,7 @@ public class PetController {
         Pet pet = new Pet();
         //???
         owner.getPets().add(pet);
+        pet.setOwner(owner);
         model.addAttribute("pet",pet);
         return VIEWS_PETS_CREAT_OR_UPDATE_FROM;
     }
