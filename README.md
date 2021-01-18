@@ -1,7 +1,7 @@
 # pet-clinic
-###Spring Framework pet clinic.
+### Spring Framework pet clinic.
 
-###This is a multi maven Spring Boot project.
+### This is a multi maven Spring Boot project.
 
 * Write unit testing code with Mockito Framework and JUnit Framework.
 * Write custom Java code with knowledge of Java.
