@@ -67,6 +67,7 @@ public class PetController {
            model.addAttribute("pet",pet);
            return VIEWS_PETS_CREAT_OR_UPDATE_FROM;
        }else {
+           pet.setOwner(owner);
            petService.save(pet);
 
            return "redirect:/owners/"+owner.getId();

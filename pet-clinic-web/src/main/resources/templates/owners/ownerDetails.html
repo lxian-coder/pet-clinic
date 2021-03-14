@@ -61,8 +61,8 @@
                 </tr>
                 </thead>
                 <tr th:each="visit : ${pet.visits}">
-                    <td th:text="${#temporals.format(visit.localDate, 'yyyy-MM-dd')}"></td>
-                    <td th:text="${visit?.description}"></td>
+                    <td th:text="${#temporals.format(visit.getDate(), 'yyyy-MM-dd')}"></td>
+                    <td th:text="${visit.description}"></td>
                 </tr>
                 <tr>
                     <td><a
